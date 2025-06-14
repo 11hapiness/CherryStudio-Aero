@@ -45,19 +45,29 @@ body[theme-mode=light] {
   --color-black: var(--fill-1);
   --color-black-soft: var(--fill-2);
   --color-black-mute: var(--fill-3);
+
+  --aero-background-light-1: rgba(255 255 255 / 0.2);
+  --aero-background-light-2: rgba(255 255 255 / 0.4);
+  --aero-background-light-3: rgba(255 255 255 / 0.6);
+
+  --aero-background-dark-1: rgba(22 22 22 / 0.2);
+  --aero-background-dark-2: rgba(22 22 22 / 0.4);
+  --aero-background-dark-3: rgba(22 22 22 / 0.6);
+
+  --aero-background-light-solid: rgba(255 255 255 / 1);
+  --aero-background-dark-solid: rgba(22 22 22 / 1);
 }
 
-/* Fix Quick Assistant's transparent background on Windows (text hard to see) */
-body[theme-mode=light][os=windows] {
-  --color-background: hsla(0 0 100% / 1);
-  --color-background-opacity: hsla(0 0 90% / 0.6);
+/* Fix new window background issue to adapt to new UI */
+[theme-mode="light"] [class^=PageContainer]  {
+  background-color: var(--aero-background-light-solid) !important;
 }
 
-/* Fix Quick Assistant's transparent background on Windows (text hard to see) */
-body[theme-mode=dark][os=windows] {
-  --color-background: hsla(0 0 8% / 1);
-  --color-background-opacity: hsla(0 0 8% / 0.6);
+[theme-mode="dark"] [class^=PageContainer]  {
+  background-color: var(--aero-background-dark-solid) !important;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   body[theme-mode=light] {
@@ -104,56 +114,74 @@ body[theme-mode=dark][os=windows] {
 [theme-mode=light] [class^=SettingGroup],
 [theme-mode=light] [class^=MainContainer],
 [theme-mode=light] [class^=MainContent] {
-  background-color: hsla(0 0% 100% / 0.4);
+  background-color: var(--aero-background-light-2);
 }
 
 /* On the right side of "Model Provider" in Settings */
 [theme-mode=light] [class^=ProviderListContainer] + [class^=SettingContainer] {
-  background: hsla(0 0% 100% / 0.4) !important;
+  background: var(--aero-background-light-2) !important;
 }
 
 [theme-mode=dark] #chat,
 [theme-mode=dark] [class^=SettingGroup],
 [theme-mode=dark] [class^=MainContainer],
 [theme-mode=dark] [class^=MainContent] {
-  background-color: hsla(0 0% 0% / 0.2);
+  background-color: var(--aero-background-dark-1);
 }
 
 /* On the right side of "Model Provider" in Settings */
 [theme-mode=dark] [class^=ProviderListContainer] + [class^=SettingContainer] {
-  background: hsla(0 0% 0% / 0.2) !important;
+  background: var(--aero-background-dark-1) !important;
 }
 
+/* https://github.com/hakadao/CherryStudio-Aero/issues/2 */
 [theme-mode=light] [class^=ant-modal],
 [theme-mode=light] #root[style*="background: var(--color-white)"] {
   --color-white: #ffffff;
-  --color-white-soft: #f2f2f2;
-  --color-white-mute: #eee;
+  --color-white-soft: rgba(255, 255, 255, 0.8);
+  --color-white-mute: rgba(255, 255, 255, 0.94);
 
   --color-background: var(--color-white);
   --color-background-soft: var(--color-white-soft);
   --color-background-mute: var(--color-white-mute);
 }
-
 [theme-mode=dark] [class^=ant-modal] {
-  --color-black: #1b1b1f;
-  --color-black-soft: #262626;
-  --color-black-mute: #363636;
+  --color-black: #181818;
+  --color-black-soft: #222222;
+  --color-black-mute: #333333;
 
   --color-background: var(--color-black);
   --color-background-soft: var(--color-black-soft);
   --color-background-mute: var(--color-black-mute);
 }
-
 .bubble .message-user,
 [class^=ant] {
-  --color-black: #1b1b1f;
-  --color-black-soft: #262626;
-  --color-black-mute: #363636;
+  --color-black: #181818;
+  --color-black-soft: #222222;
+  --color-black-mute: #333333;
   --color-white: #ffffff;
-  --color-white-soft: #f2f2f2;
-  --color-white-mute: #eee;
+  --color-white-soft: rgba(255, 255, 255, 0.8);
+  --color-white-mute: rgba(255, 255, 255, 0.94);
 
   --chat-text-user: var(--color-black);
+}
+
+/* Fix Quick Assistant's transparent background on Windows (text hard to see) */
+body[theme-mode=light][os=windows] {
+  --color-background: hsla(0 0 100% / 1);
+  --color-background-opacity: hsla(0 0 90% / 0.6);
+}
+body[theme-mode=dark][os=windows] {
+  --color-background: hsla(0 0 8% / 1);
+  --color-background-opacity: hsla(0 0 8% / 0.6);
+}
+
+/* https://github.com/hakadao/CherryStudio-Aero/issues/5 */
+/* Quick panel text hard to see */
+[theme-mode="light"] [class^=QuickPanelBody] {
+  background-color: var(--aero-background-light-3) !important;
+}
+[theme-mode="dark"] [class^=QuickPanelBody] {
+  background-color: var(--aero-background-dark-3) !important;
 }
 ```
