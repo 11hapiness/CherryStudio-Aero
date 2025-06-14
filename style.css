@@ -19,6 +19,29 @@ body[theme-mode=light] {
   --color-black: var(--fill-1);
   --color-black-soft: var(--fill-2);
   --color-black-mute: var(--fill-3);
+
+  --background-light-aero: rgba(255, 255, 255, 0.3);
+  --background-dark-aero: rgba(36, 36, 36, 0.1);
+
+}
+
+/* Fix new window background issue to adapt to new UI */
+[theme-mode="light"] [class^="PageContainer"],
+[theme-mode="light"] [class^="MainMenu"],
+[theme-mode="light"] [class^="UserMenu"],
+[theme-mode="light"] .assistants-tab,
+[theme-mode="light"] .home-tabs {
+  background-color: var(--background-light-aero) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+}
+
+[theme-mode="dark"] [class^="PageContainer"],
+[theme-mode="dark"] [class^="MainMenu"],
+[theme-mode="dark"] [class^="UserMenu"],
+[theme-mode="dark"] .assistants-tab,
+[theme-mode="dark"] .home-tabs {
+  background-color: var(--background-dark-aero) !important;
+  backdrop-filter: blur(16px) saturate(180%);
 }
 
 /* Fix Quick Assistant's transparent background on Windows (text hard to see) */
