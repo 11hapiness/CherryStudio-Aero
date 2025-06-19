@@ -28,13 +28,18 @@ CSS
 /* https://github.com/hakadao/CherryStudio-Aero */
 
 body[theme-mode=light] {
-  --fill-1: rgba(120 120 122 / 0.1);
-  --fill-2: rgba(120 120 122 / 0.15);
-  --fill-3: rgba(120 120 122 / 0.20);
+  --fill-1: rgba(120 120 122 / 0.08);
+  --fill-2: rgba(120 120 122 / 0.12);
+  --fill-3: rgba(120 120 122 / 0.16);
 
   --color-white: var(--fill-1);
   --color-white-soft: var(--fill-2);
   --color-white-mute: var(--fill-3);
+
+  --color-list-item: var(--fill-1);
+  --color-list-item-hover: var(--fill-2);
+
+  --navbar-background: hsl(240, 100%, 99.4%);
 }
 
 :root {
@@ -45,6 +50,9 @@ body[theme-mode=light] {
   --color-black: var(--fill-1);
   --color-black-soft: var(--fill-2);
   --color-black-mute: var(--fill-3);
+
+  --color-list-item: var(--fill-1);
+  --color-list-item-hover: var(--fill-2);
 
   --aero-background-light-1: rgba(255 255 255 / 0.2);
   --aero-background-light-2: rgba(255 255 255 / 0.4);
