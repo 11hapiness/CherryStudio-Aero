@@ -192,4 +192,15 @@ body[theme-mode=dark][os=windows] {
 [theme-mode="dark"] [class^=QuickPanelBody] {
   background-color: var(--aero-background-dark-3) !important;
 }
+
+/* https://github.com/hakadao/CherryStudio-Aero/issues/10 */
+/* The drawer title content is hard to read when open the mini app */
+[theme-mode="light"] #root[style*="background: var(--color-background)"],
+[theme-mode="light"] .ant-drawer-content[style*="background-color: var(--color-background)"] {
+  background: var(--aero-background-light-solid) !important;
+}
+[theme-mode="dark"] #root[style*="background: var(--color-background)"],
+[theme-mode="dark"] .ant-drawer-content[style*="background-color: var(--color-background)"] {
+  background: var(--aero-background-dark-solid) !important;
+}
 ```
