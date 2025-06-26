@@ -41,6 +41,18 @@ body[theme-mode=light] {
   --color-list-item-hover: var(--fill-2);
 
   --navbar-background: hsl(240, 100%, 99.4%);
+
+  --aero-background-1: rgba(255 255 255 / 0.2);
+  --aero-background-2: rgba(255 255 255 / 0.4);
+  --aero-background-3: rgba(255 255 255 / 0.6);
+  --aero-background-solid: rgba(255 255 255 / 1);
+}
+
+body[theme-mode=dark] {
+  --aero-background-1: rgba(22 22 22 / 0.2);
+  --aero-background-2: rgba(22 22 22 / 0.4);
+  --aero-background-3: rgba(22 22 22 / 0.6);
+  --aero-background-solid: rgba(22 22 22 / 1);
 }
 
 :root {
@@ -54,29 +66,12 @@ body[theme-mode=light] {
 
   --color-list-item: var(--fill-1);
   --color-list-item-hover: var(--fill-2);
-
-  --aero-background-light-1: rgba(255 255 255 / 0.2);
-  --aero-background-light-2: rgba(255 255 255 / 0.4);
-  --aero-background-light-3: rgba(255 255 255 / 0.6);
-
-  --aero-background-dark-1: rgba(22 22 22 / 0.2);
-  --aero-background-dark-2: rgba(22 22 22 / 0.4);
-  --aero-background-dark-3: rgba(22 22 22 / 0.6);
-
-  --aero-background-light-solid: rgba(255 255 255 / 1);
-  --aero-background-dark-solid: rgba(22 22 22 / 1);
 }
 
 /* Fix new window background issue to adapt to new UI */
-[theme-mode="light"] [class^=PageContainer]  {
-  background-color: var(--aero-background-light-solid) !important;
+[class^=PageContainer]  {
+  background-color: var(--aero-background-solid) !important;
 }
-
-[theme-mode="dark"] [class^=PageContainer]  {
-  background-color: var(--aero-background-dark-solid) !important;
-}
-
-
 
 @media (prefers-color-scheme: dark) {
   body[theme-mode=light] {
@@ -123,24 +118,24 @@ body[theme-mode=light] {
 [theme-mode=light] [class^=SettingGroup],
 [theme-mode=light] [class^=MainContainer],
 [theme-mode=light] [class^=MainContent] {
-  background-color: var(--aero-background-light-2);
+  background-color: var(--aero-background-2);
 }
 
 /* On the right side of "Model Provider" in Settings */
 [theme-mode=light] [class^=ProviderListContainer] + [class^=SettingContainer] {
-  background: var(--aero-background-light-2) !important;
+  background: var(--aero-background-2) !important;
 }
 
 [theme-mode=dark] #chat,
 [theme-mode=dark] [class^=SettingGroup],
 [theme-mode=dark] [class^=MainContainer],
 [theme-mode=dark] [class^=MainContent] {
-  background-color: var(--aero-background-dark-1);
+  background-color: var(--aero-background-1);
 }
 
 /* On the right side of "Model Provider" in Settings */
 [theme-mode=dark] [class^=ProviderListContainer] + [class^=SettingContainer] {
-  background: var(--aero-background-dark-1) !important;
+  background: var(--aero-background-1) !important;
 }
 
 /* https://github.com/hakadao/CherryStudio-Aero/issues/2 */
@@ -187,21 +182,14 @@ body[theme-mode=dark][os=windows] {
 
 /* https://github.com/hakadao/CherryStudio-Aero/issues/5 */
 /* Quick panel text hard to see */
-[theme-mode="light"] [class^=QuickPanelBody] {
-  background-color: var(--aero-background-light-3) !important;
-}
-[theme-mode="dark"] [class^=QuickPanelBody] {
-  background-color: var(--aero-background-dark-3) !important;
+[class^=QuickPanelBody] {
+  background-color: var(--aero-background-3) !important;
 }
 
 /* https://github.com/hakadao/CherryStudio-Aero/issues/10 */
 /* The drawer title content is hard to read when open the mini app */
-[theme-mode="light"] #root[style*="background: var(--color-background)"],
-[theme-mode="light"] .ant-drawer-content[style*="background-color: var(--color-background)"] {
-  background: var(--aero-background-light-solid) !important;
-}
-[theme-mode="dark"] #root[style*="background: var(--color-background)"],
-[theme-mode="dark"] .ant-drawer-content[style*="background-color: var(--color-background)"] {
-  background: var(--aero-background-dark-solid) !important;
+#root[style*="background: var(--color-background)"],
+.ant-drawer-content[style*="background-color: var(--color-background)"] {
+  background: var(--aero-background-solid) !important;
 }
 ```
