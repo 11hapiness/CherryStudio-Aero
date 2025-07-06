@@ -27,10 +27,10 @@ CSS
 /* Cherry Studio Aero Theme */
 /* https://github.com/hakadao/CherryStudio-Aero */
 
-body[theme-mode=light] {
-  --fill-1: rgba(120 120 122 / 0.08);
-  --fill-2: rgba(120 120 122 / 0.12);
-  --fill-3: rgba(120 120 122 / 0.16);
+body[theme-mode='light'] {
+  --fill-1: rgba(120 120 122 / 0.12);
+  --fill-2: rgba(120 120 122 / 0.2);
+  --fill-3: rgba(120 120 122 / 0.28);
 
   --color-white: var(--fill-1);
   --color-white-soft: var(--fill-2);
@@ -45,9 +45,12 @@ body[theme-mode=light] {
   --aero-background-2: rgba(255 255 255 / 0.4);
   --aero-background-3: rgba(255 255 255 / 0.6);
   --aero-background-solid: rgba(255 255 255 / 1);
+
+  /* remove the background of the navbar to make it more transparent on macOS */
+  --navbar-background-mac: rgba(255 255 255 / 0.3);
 }
 
-body[theme-mode=dark] {
+body[theme-mode='dark'] {
   --aero-background-1: rgba(22 22 22 / 0.2);
   --aero-background-2: rgba(22 22 22 / 0.4);
   --aero-background-3: rgba(22 22 22 / 0.6);
@@ -56,7 +59,7 @@ body[theme-mode=dark] {
 
 :root {
   --fill-1: rgba(120 120 122 / 0.15);
-  --fill-2: rgba(120 120 122 / 0.20);
+  --fill-2: rgba(120 120 122 / 0.2);
   --fill-3: rgba(120 120 122 / 0.25);
 
   --color-black: var(--fill-1);
@@ -67,79 +70,102 @@ body[theme-mode=dark] {
   --color-list-item-hover: var(--fill-2);
 }
 
+/* reset ant design variables */
+body[theme-mode='light'] *,
+body[theme-mode='light'] [class^='ant'] {
+  --ant-select-selector-bg: var(--aero-background-1);
+  --ant-color-bg-container: var(--aero-background-1);
+  --ant-segmented-item-selected-bg: var(--aero-background-3);
+  --ant-button-default-bg: var(--aero-background-1);
+}
+
+/* reset ant design variables */
+body[theme-mode='dark'] *,
+body[theme-mode='dark'] [class^='ant'] {
+  --ant-select-selector-bg: var(--fill-1);
+  --ant-color-bg-container: var(--fill-1);
+  --ant-segmented-item-selected-bg: var(--fill-3);
+  --ant-button-default-bg: var(--fill-1);
+}
+
 /* Fix new window background issue to adapt to new UI */
-[class^=PageContainer]  {
+[class^='PageContainer'] {
   background-color: var(--aero-background-solid) !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  body[theme-mode=light] {
-      background: rgba(255 255 255 / 0.3);
+  body[theme-mode='light'] {
+    background: rgba(255 255 255 / 0.3);
   }
 }
 
 @media (prefers-color-scheme: light) {
-  body[theme-mode=dark] {
-      background: rgba(0 0 0 / 0.2);
+  body[theme-mode='dark'] {
+    background: rgba(0 0 0 / 0.2);
   }
 }
 
-[theme-mode=light] #content-container,
-[theme-mode=light] .minapp-drawer .ant-drawer-body {
+[theme-mode='light'] #content-container,
+[theme-mode='light'] .minapp-drawer .ant-drawer-body {
   background-color: rgba(120 120 122 / 0.05);
 }
 
-[theme-mode=dark] #content-container,
-[theme-mode=dark] .minapp-drawer .ant-drawer-body {
+[theme-mode='dark'] #content-container,
+[theme-mode='dark'] .minapp-drawer .ant-drawer-body {
   background-color: rgba(120 120 122 / 0.05);
 }
 
 .home-tabs,
-[class^=ProgramSection],
-[class^=IconSection],
-#messages, 
-[class^=SettingContainer] {
+[class^='ProgramSection'],
+[class^='IconSection'],
+#messages,
+[class^='SettingContainer'] {
   background-color: transparent;
 }
 
-[class^=TopicListItem] .menu {
+[class^='TopicListItem'] .menu {
   background-color: transparent !important;
 }
 
 #inputbar,
 .system-prompt,
-[class^=CardContent],
-[class^=ServerCard] {
+[class^='CardContent'],
+[class^='ServerCard'] {
   background-color: var(--fill-1);
 }
 
-[theme-mode=light] #chat,
-[theme-mode=light] [class^=SettingGroup],
-[theme-mode=light] [class^=MainContainer],
-[theme-mode=light] [class^=MainContent] {
+[theme-mode='light'] #chat,
+[theme-mode='light'] [class^='SettingGroup'],
+[theme-mode='light'] [class^='MainContainer'],
+[theme-mode='light'] [class^='MainContent'] {
   background-color: var(--aero-background-2);
 }
 
 /* On the right side of "Model Provider" in Settings */
-[theme-mode=light] [class^=ProviderListContainer] + [class^=SettingContainer] {
+[theme-mode='light']
+  [class^='ProviderListContainer']
+  + [class^='SettingContainer'] {
   background: var(--aero-background-2) !important;
 }
 
-[theme-mode=dark] #chat,
-[theme-mode=dark] [class^=SettingGroup],
-[theme-mode=dark] [class^=MainContainer],
-[theme-mode=dark] [class^=MainContent] {
+[theme-mode='dark'] #chat,
+[theme-mode='dark'] [class^='SettingGroup'],
+[theme-mode='dark'] [class^='MainContainer'],
+[theme-mode='dark'] [class^='MainContent'] {
   background-color: var(--aero-background-1);
 }
 
 /* On the right side of "Model Provider" in Settings */
-[theme-mode=dark] [class^=ProviderListContainer] + [class^=SettingContainer] {
+[theme-mode='dark']
+  [class^='ProviderListContainer']
+  + [class^='SettingContainer'] {
   background: var(--aero-background-1) !important;
 }
 
 /* https://github.com/hakadao/CherryStudio-Aero/issues/2 */
-[theme-mode=light] [class^=ant-modal],
-[theme-mode=light] #root[style*="background: var(--color-white)"] {
+/* search result dialog becomes too transparent: https://github.com/hakadao/CherryStudio-Aero/issues/11 */
+[theme-mode='light'] [class^='ant-modal'],
+[theme-mode='light'] #root[style*='background: var(--color-white)'] {
   --color-white: #ffffff;
   --color-white-soft: rgba(255, 255, 255, 0.8);
   --color-white-mute: rgba(255, 255, 255, 0.94);
@@ -147,8 +173,10 @@ body[theme-mode=dark] {
   --color-background: var(--color-white);
   --color-background-soft: var(--color-white-soft);
   --color-background-mute: var(--color-white-mute);
+
+  --ant-modal-content-bg: var(--aero-background-solid);
 }
-[theme-mode=dark] [class^=ant-modal] {
+[theme-mode='dark'] [class^='ant-modal'] {
   --color-black: #181818;
   --color-black-soft: #222222;
   --color-black-mute: #333333;
@@ -156,9 +184,11 @@ body[theme-mode=dark] {
   --color-background: var(--color-black);
   --color-background-soft: var(--color-black-soft);
   --color-background-mute: var(--color-black-mute);
+
+  --ant-modal-content-bg: var(--aero-background-solid);
 }
 .bubble .message-user,
-[class^=ant] {
+[class^='ant'] {
   --color-black: #181818;
   --color-black-soft: #222222;
   --color-black-mute: #333333;
@@ -170,25 +200,25 @@ body[theme-mode=dark] {
 }
 
 /* Fix Quick Assistant's transparent background on Windows (text hard to see) */
-body[theme-mode=light][os=windows] {
+body[theme-mode='light'][os='windows'] {
   --color-background: hsla(0 0 100% / 1);
   --color-background-opacity: hsla(0 0 90% / 0.6);
 }
-body[theme-mode=dark][os=windows] {
+body[theme-mode='dark'][os='windows'] {
   --color-background: hsla(0 0 8% / 1);
   --color-background-opacity: hsla(0 0 8% / 0.6);
 }
 
 /* https://github.com/hakadao/CherryStudio-Aero/issues/5 */
 /* Quick panel text hard to see */
-[class^=QuickPanelBody] {
+[class^='QuickPanelBody'] {
   background-color: var(--aero-background-3) !important;
 }
 
 /* https://github.com/hakadao/CherryStudio-Aero/issues/10 */
 /* The drawer title content is hard to read when open the mini app */
-#root[style*="background: var(--color-background)"],
-.ant-drawer-content[style*="background-color: var(--color-background)"] {
+#root[style*='background: var(--color-background)'],
+.ant-drawer-content[style*='background-color: var(--color-background)'] {
   background: var(--aero-background-solid) !important;
 }
 ```
