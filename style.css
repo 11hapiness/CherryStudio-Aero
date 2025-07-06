@@ -35,11 +35,11 @@ body[theme-mode='dark'] {
   --fill-1: rgba(120 120 122 / 0.15);
   --fill-2: rgba(120 120 122 / 0.2);
   --fill-3: rgba(120 120 122 / 0.25);
-  
+
   --color-black: var(--fill-1);
   --color-black-soft: var(--fill-2);
   --color-black-mute: var(--fill-3);
-  
+
   --color-list-item: var(--fill-1);
   --color-list-item-hover: var(--fill-2);
 }
