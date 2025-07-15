@@ -78,6 +78,7 @@ body[theme-mode='light'] [class^='ant'] {
   --ant-color-bg-container: var(--aero-background-1);
   --ant-segmented-item-selected-bg: var(--aero-background-3);
   --ant-button-default-bg: var(--aero-background-1);
+  --ant-radio-button-bg: var(--aero-background-1);
 }
 
 /* reset ant design variables */
@@ -87,6 +88,7 @@ body[theme-mode='dark'] [class^='ant'] {
   --ant-color-bg-container: var(--fill-1);
   --ant-segmented-item-selected-bg: var(--fill-3);
   --ant-button-default-bg: var(--fill-1);
+  --ant-radio-button-bg: var(--fill-1);
 }
 
 /* Fix new window background issue to adapt to new UI */
@@ -219,7 +221,10 @@ body[theme-mode='dark'][os='windows'] {
 /* https://github.com/hakadao/CherryStudio-Aero/issues/10 */
 /* The drawer title content is hard to read when open the mini app */
 #root[style*='background: var(--color-background)'],
-.ant-drawer-content[style*='background-color: var(--color-background)'] {
+.ant-drawer-content[style*='background-color: var(--color-background)'],
+/* https://github.com/hakadao/CherryStudio-Aero/issues/12 */
+/* Search bar background is too transparent */
+[class^='SearchBarContainer'] {
   background: var(--aero-background-solid) !important;
 }
 ```
