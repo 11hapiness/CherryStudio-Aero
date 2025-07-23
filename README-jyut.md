@@ -224,7 +224,10 @@ body[theme-mode='dark'][os='windows'] {
 .ant-drawer-content[style*='background-color: var(--color-background)'],
 /* https://github.com/hakadao/CherryStudio-Aero/issues/12 */
 /* Search bar background is too transparent */
-[class^='SearchBarContainer'] {
+[class^='SearchBarContainer'],
+/* https://github.com/hakadao/CherryStudio-Aero/issues/13#issuecomment-3105519544 */
+/* Tooltip background is too transparent */
+.ant-tooltip-inner {
   background: var(--aero-background-solid) !important;
 }
 ```
