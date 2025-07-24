@@ -14,8 +14,6 @@ Give your [Cherry Studio](https://github.com/CherryHQ/cherry-studio) a modern, A
 ![image](https://github.com/user-attachments/assets/8a3fa8a6-e28b-4628-90c8-aadb00e7437a)
 ![image](https://github.com/user-attachments/assets/0865e220-8398-4564-acc7-33b04220d015)
 
-
-
 <!--
 ![image](https://github.com/user-attachments/assets/f1b45077-49e7-4c04-8c5f-b5099d1020aa)
 ![image](https://github.com/user-attachments/assets/a1203c88-9efa-489b-b3e7-a5f41961fd9e)
