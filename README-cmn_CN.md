@@ -172,7 +172,10 @@ body[theme-mode='dark'] [class^='ant'] {
 /* https://github.com/hakadao/CherryStudio-Aero/issues/2 */
 /* search result dialog becomes too transparent: https://github.com/hakadao/CherryStudio-Aero/issues/11 */
 [theme-mode='light'] [class^='ant-modal'],
-[theme-mode='light'] #root[style*='background: var(--color-white)'] {
+[theme-mode='light'] #root[style*='background: var(--color-white)'],
+/* https://github.com/hakadao/CherryStudio-Aero/issues/14 */
+/* selection assitant panel */
+[theme-mode='light'] [class^='WindowFrame'] {
   --color-white: #ffffff;
   --color-white-soft: rgba(255, 255, 255, 0.8);
   --color-white-mute: rgba(255, 255, 255, 0.94);
@@ -183,7 +186,10 @@ body[theme-mode='dark'] [class^='ant'] {
 
   --ant-modal-content-bg: var(--aero-background-solid);
 }
-[theme-mode='dark'] [class^='ant-modal'] {
+[theme-mode='dark'] [class^='ant-modal'],
+/* https://github.com/hakadao/CherryStudio-Aero/issues/14 */
+/* selection assitant panel */
+[theme-mode='dark'] [class^='WindowFrame'] {
   --color-black: #181818;
   --color-black-soft: #222222;
   --color-black-mute: #333333;
@@ -233,5 +239,10 @@ body[theme-mode='dark'][os='windows'] {
 /* Tooltip background is too transparent */
 .ant-tooltip-inner {
   background: var(--aero-background-solid) !important;
+}
+
+/* https://github.com/hakadao/CherryStudio-Aero/issues/15 */
+.markdown [class^='Container'] [class^='Header']+[class^='Content'] {
+  background: transparent;
 }
 ```
