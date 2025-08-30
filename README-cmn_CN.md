@@ -178,7 +178,9 @@ body[theme-mode='dark'] [class^='ant'] {
 [theme-mode='light'] [class^='WindowFrame'],
 /* https://github.com/hakadao/CherryStudio-Aero/issues/13#issuecomment-3105519544 */
 /* Tooltip background is too transparent */
-[theme-mode='light'] .ant-tooltip-inner {
+[theme-mode='light'] .ant-tooltip-inner,
+/* https://github.com/hakadao/CherryStudio-Aero/issues/18 */
+[theme-mode='light'] [class^='GroupItem'] {
   --color-white: #ffffff;
   --color-white-soft: rgba(255, 255, 255, 0.8);
   --color-white-mute: rgba(255, 255, 255, 0.94);
@@ -186,6 +188,8 @@ body[theme-mode='dark'] [class^='ant'] {
   --color-background: var(--color-white);
   --color-background-soft: var(--color-white-soft);
   --color-background-mute: var(--color-white-mute);
+  
+  --modal-background: var(--color-white);
 
   --ant-modal-content-bg: var(--aero-background-solid);
 }
@@ -195,7 +199,9 @@ body[theme-mode='dark'] [class^='ant'] {
 [theme-mode='dark'] [class^='WindowFrame'],
 /* https://github.com/hakadao/CherryStudio-Aero/issues/13#issuecomment-3105519544 */
 /* Tooltip background is too transparent */
-[theme-mode='dark'] .ant-tooltip-inner {
+[theme-mode='dark'] .ant-tooltip-inner,
+/* https://github.com/hakadao/CherryStudio-Aero/issues/18 */
+[theme-mode='dark'] [class^='GroupItem'] {
   --color-black: #181818;
   --color-black-soft: #222222;
   --color-black-mute: #333333;
@@ -203,6 +209,8 @@ body[theme-mode='dark'] [class^='ant'] {
   --color-background: var(--color-black);
   --color-background-soft: var(--color-black-soft);
   --color-background-mute: var(--color-black-mute);
+
+  --modal-background: var(--color-black);
 
   --ant-modal-content-bg: var(--aero-background-solid);
 }
