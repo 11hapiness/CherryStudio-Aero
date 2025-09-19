@@ -33,9 +33,9 @@ CSS
 /* https://github.com/hakadao/CherryStudio-Aero */
 
 body[theme-mode='light'] {
-  --fill-1: rgba(120 120 122 / 0.12);
-  --fill-2: rgba(120 120 122 / 0.2);
-  --fill-3: rgba(120 120 122 / 0.28);
+  --fill-1: rgba(191 189 200 / 0.16);
+  --fill-2: rgba(191 189 200 / 0.22);
+  --fill-3: rgba(191 189 200 / 0.28);
 
   --color-white: var(--fill-1);
   --color-white-soft: var(--fill-2);
@@ -44,15 +44,15 @@ body[theme-mode='light'] {
   --color-list-item: var(--fill-1);
   --color-list-item-hover: var(--fill-2);
 
-  --navbar-background: hsl(240, 100%, 99.4%);
 
-  --aero-background-1: rgba(255 255 255 / 0.2);
-  --aero-background-2: rgba(255 255 255 / 0.4);
-  --aero-background-3: rgba(255 255 255 / 0.6);
-  --aero-background-solid: rgba(255 255 255 / 1);
+  --aero-background-1: hsl(0 0% 100% / 0.2);
+  --aero-background-2: hsl(0 0% 100% / 0.4);
+  --aero-background-3: hsl(0 0% 100% / 0.6);
+  --aero-background-solid: hsl(0 0% 100% / 1);
 
+  --navbar-background: hsl(240 100% 98.4%);
   /* remove the background of the navbar to make it more transparent on macOS */
-  --navbar-background-mac: rgba(255 255 255 / 0.3);
+  --navbar-background-mac: hsl(240 100% 98.4% / 0.4);
 }
 
 body[theme-mode='dark'] {
@@ -102,7 +102,7 @@ body[theme-mode='dark'] [class^='ant'] {
 
 @media (prefers-color-scheme: dark) {
   body[theme-mode='light'] {
-    background: rgba(255 255 255 / 0.3);
+    background: hsla(0 0% 100% / 0.3);
   }
 }
 
@@ -114,7 +114,7 @@ body[theme-mode='dark'] [class^='ant'] {
 
 [theme-mode='light'] #content-container,
 [theme-mode='light'] .minapp-drawer .ant-drawer-body {
-  background-color: rgba(120 120 122 / 0.05);
+  background-color: rgba(191 189 200 / 0.05);
 }
 
 [theme-mode='dark'] #content-container,
@@ -195,7 +195,7 @@ body[theme-mode='dark'] [class^='ant'] {
 }
 [theme-mode='dark'] [class^='ant-modal'],
 /* https://github.com/hakadao/CherryStudio-Aero/issues/14 */
-/* selection assitant panel */
+/* selection assistant panel */
 [theme-mode='dark'] [class^='WindowFrame'],
 /* https://github.com/hakadao/CherryStudio-Aero/issues/13#issuecomment-3105519544 */
 /* Tooltip background is too transparent */
