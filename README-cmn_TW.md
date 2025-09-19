@@ -52,7 +52,7 @@ body[theme-mode='light'] {
 
   --navbar-background: hsl(240 100% 98.4%);
   /* remove the background of the navbar to make it more transparent on macOS */
-  --navbar-background-mac: hsl(240 100% 98.4% / 0.4);
+  --navbar-background-mac: hsl(240 100% 98.4% / 0.2);
 }
 
 body[theme-mode='dark'] {
@@ -136,15 +136,15 @@ body[theme-mode='dark'] [class^='ant'] {
 
 #inputbar,
 .system-prompt,
-[class^='CardContent'],
-[class^='ServerCard'] {
+[class^='CardContent'] {
   background-color: var(--fill-1);
 }
 
 [theme-mode='light'] #chat,
 [theme-mode='light'] [class^='SettingGroup'],
 [theme-mode='light'] [class^='MainContainer'],
-[theme-mode='light'] [class^='MainContent'] {
+[theme-mode='light'] [class^='MainContent'],
+[theme-mode='light'] [class^='AgentCardContainer'] {
   background-color: var(--aero-background-2);
 }
 
@@ -158,7 +158,8 @@ body[theme-mode='dark'] [class^='ant'] {
 [theme-mode='dark'] #chat,
 [theme-mode='dark'] [class^='SettingGroup'],
 [theme-mode='dark'] [class^='MainContainer'],
-[theme-mode='dark'] [class^='MainContent'] {
+[theme-mode='dark'] [class^='MainContent'],
+[theme-mode='dark'] [class^='AgentCardContainer'] {
   background-color: var(--aero-background-1);
 }
 
@@ -182,8 +183,8 @@ body[theme-mode='dark'] [class^='ant'] {
 /* https://github.com/hakadao/CherryStudio-Aero/issues/18 */
 [theme-mode='light'] [class^='GroupItem'] {
   --color-white: #ffffff;
-  --color-white-soft: rgba(255, 255, 255, 0.8);
-  --color-white-mute: rgba(255, 255, 255, 0.94);
+  --color-white-soft: rgba(0, 0, 0, 0.04);
+  --color-white-mute: #eee;
 
   --color-background: var(--color-white);
   --color-background-soft: var(--color-white-soft);
