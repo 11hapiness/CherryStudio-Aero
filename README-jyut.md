@@ -34,9 +34,9 @@ CSS
 /* https://github.com/hakadao/CherryStudio-Aero */
 
 body[theme-mode='light'] {
-  --fill-1: hsla(252, 15%, 100%, 0.6);
-  --fill-2: hsla(252, 15%, 50%, 0.1);
-  --fill-3: hsla(252, 15%, 50%, 0.14);
+  --fill-1: hsl(252 15% 100% / 0.6);
+  --fill-2: hsl(252 15% 50% / 0.1);
+  --fill-3: hsl(252 15% 50% / 0.14);
 
   --color-white: var(--fill-1);
   --color-white-soft: var(--fill-2);
@@ -50,9 +50,9 @@ body[theme-mode='light'] {
   --aero-background-3: hsl(0 0% 100% / 0.6);
   --aero-background-solid: hsl(0 0% 100% / 1);
 
-  --navbar-background: hsl(240 100% 98.4%);
+  --navbar-background: hsl(240 100% 97.4%);
   /* remove the background of the navbar to make it more transparent on macOS */
-  --navbar-background-mac: hsl(240 100% 98.4% / 0.2);
+  --navbar-background-mac: hsl(240 100% 97.4% / 0.2);
 }
 
 body[theme-mode='dark'] {
@@ -127,12 +127,12 @@ body[theme-mode='dark'] [class^='ant'] {
 
 [theme-mode='light'] #content-container,
 [theme-mode='light'] .minapp-drawer .ant-drawer-body {
-  background-color: hsla(252, 15%, 50%, 0.05);
+  background-color: var(--navbar-background-mac, var(--navbar-background));
 }
 
 [theme-mode='dark'] #content-container,
 [theme-mode='dark'] .minapp-drawer .ant-drawer-body {
-  background-color: rgba(120 120 122 / 0.05);
+  background-color: rgba(22 22 22 / 0.05);
 }
 
 .home-tabs,
@@ -156,7 +156,7 @@ body[theme-mode='dark'] [class^='ant'] {
 [theme-mode='light'] #chat,
 [theme-mode='light'] [class^='SettingGroup'],
 [theme-mode='light'] [class^='MainContainer'],
-[theme-mode='light'] [class^='MainContent'],
+/* [theme-mode='light'] [class^='MainContent'], */
 [theme-mode='light'] [class^='AgentCardContainer'] {
   background-color: var(--aero-background-2);
 }
@@ -171,7 +171,7 @@ body[theme-mode='dark'] [class^='ant'] {
 [theme-mode='dark'] #chat,
 [theme-mode='dark'] [class^='SettingGroup'],
 [theme-mode='dark'] [class^='MainContainer'],
-[theme-mode='dark'] [class^='MainContent'],
+/* [theme-mode='dark'] [class^='MainContent'], */
 [theme-mode='dark'] [class^='AgentCardContainer'] {
   background-color: var(--aero-background-1);
 }
